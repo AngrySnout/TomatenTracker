@@ -1,9 +1,10 @@
-# Sauer Tracker 2 (Tomatenquark branch)
+# Tomatenquark Tracker
 
 Global server and player stats tracking for Cube 2: Tomatenquark.
 
-This is the second iteration of [sauertracker.net](http://sauertracker.net/). It
-has many improvements over the original Tracker.
+This is the source code for
+[tracker.tomatenquark.org](http://tracker.tomatenquark.org/). It is based on
+[sauertracker.net](http://sauertracker.net/).
 
 Powered by NodeJS, Webpack, Pug, Sass, PostgreSQL, and Redis.
 
@@ -57,10 +58,8 @@ Configuration can be changed in _docker-compose.yml_ under
 
 ```bash
 # Clone the repository
-git clone https://github.com/AngrySnout/SauerTracker
-cd SauerTracker
-# Checkout the tomatenquark branch
-git checkout tomatenquark
+git clone https://github.com/AngrySnout/TomatenTracker
+cd TomatenTracker
 # Install the dependencies
 yarn install
 # Build the Tracker
