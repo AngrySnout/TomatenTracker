@@ -2,9 +2,8 @@ import express from 'express';
 import http from 'http';
 import bodyParser from 'body-parser';
 
-import config from '../../config.json';
-
 import { logInfo } from '../util/util';
+import { getPort } from '../util/config';
 
 const app = express();
 export default app;
@@ -17,15 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV !== 'production') app.locals.pretty = true;
 
 app.use((req, res, next) => {
-  // If using an old domain, redirect to "sauertracker.net"
-  if (
-    req.get('host') === 'uk.cube2.org' ||
-    req.get('host') === 'tracker.impressivesquad.eu'
-  ) {
-    res.redirect(`${req.protocol}://sauertracker.net${req.originalUrl}`);
-    return;
-  }
-
   // Enable cross-origin on all routes
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
@@ -43,12 +33,8 @@ app.use((req, res, next) => {
   next();
 });
 
-if (config.website.serveStaticFiles) {
-  app.use('/', express.static('./assets', { maxAge: 24 * 60 * 60 * 1000 }));
-}
+app.use('/', express.static('./assets', { maxAge: 24 * 60 * 60 * 1000 }));
 
-http
-  .createServer(app.handle.bind(app))
-  .listen(config.website.serverPort, () => {
-    logInfo(`Server listening on port ${config.website.serverPort}`);
-  });
+http.createServer(app.handle.bind(app)).listen(getPort(), () => {
+  logInfo(`Server listening on port ${getPort()}`);
+});
