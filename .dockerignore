@@ -12,3 +12,4 @@ logs/
 dist/
 docker-compose.yml
 Dockerfile
+pgdata/
