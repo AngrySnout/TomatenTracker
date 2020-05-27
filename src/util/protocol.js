@@ -22,6 +22,7 @@ export const gameModes = [
 	'collect',
 	'insta_collect',
 	'effic_collect',
+	'hide_and_seek',
 ];
 
 export const masterModes = [

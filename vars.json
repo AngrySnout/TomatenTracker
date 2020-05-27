@@ -31,7 +31,8 @@
     "effic_hold": { "teamMode": true, "efficMode": true, "flagMode": true },
     "collect": { "teamMode": true, "flagMode": true },
     "insta_collect": { "teamMode": true, "instaMode": true, "flagMode": true },
-    "effic_collect": { "teamMode": true, "efficMode": true, "flagMode": true }
+    "effic_collect": { "teamMode": true, "efficMode": true, "flagMode": true },
+    "hide_and_seek": { "teamMode": true }
   },
   "gameModeGroups": [
     {
@@ -50,7 +51,8 @@
         { "name": "teamplay" },
         { "name": "insta_team" },
         { "name": "effic_team" },
-        { "name": "tac_team" }
+        { "name": "tac_team" },
+        { "name": "hide_and_seek" }
       ]
     },
     {
