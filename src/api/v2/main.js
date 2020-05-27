@@ -5,3 +5,4 @@ require('./game');
 require('./players');
 require('./player');
 require('./clans');
+require('./stats');
